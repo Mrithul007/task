@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>   
+<body style="background-color:#fdd31d;">
+
+<button id="btn">Click</button>
+<script src="{% static 'js/index.js' %}"></script>
+
+
+
+<form name="form1" id="form1">
+
+<label>Enter Your Name:</label><br>
+<input type="text" name="username" placeholder=""><br>
+<label>Date of birth:</label><br>
+<input type="date" id="dob" name="DOB"><br>
+<label>Age:</label><br>
+<input type="number" id="age" name="Age"><br>
+<label>Gender:</label><br>
+<label for="male">Male</label>
+<input type="radio" name="gender" id="male" value="male" checked>
+<label for="female">Female</label>
+<input type="radio" name="gender" id="female" value="female"><br>
+<label>Phone Number:</label><br>
+<input type="tel" id="phone" name="phone" placeholder=""><br>
+<label>Mail id:</label><br>
+<input type="email" id="email" name="email"><br>
+<label>Address:</label><br>
+<input type="text" name="address" placeholder=""><br>
+    <script src="{% static 'js/drop.js' %}"></script>
+<select name="subject" id="subject">
+    <option value="" selected="selected">Department:</option>
+  </select>
+  <br>
+<select name="topic" id="topic">
+    <option value="" selected="selected">Courses:</option>
+  </select>
+  <br>
+<select name="chapter" id="chapter">
+    <option value="" selected="selected">Purpose:</option>
+  </select>
+  <br>
+  <label>Materials:</label><br>
+  <input type="checkbox" id="note" name="note" value="note"><label>Notebook </label> <input type="checkbox" id="pen" name="pen" value="pen"><label>Pen </label> <input type="checkbox" id="paper" name="paper" value="paper"><label>Exam Papers </label>
+  <input type="checkbox" id="scale" name="scale" value="scale"><label>Scale </label><input type="checkbox" id="draft" name="draft" value="draft"><label>Drafter </label><br>
+  <a href="{% url 'store:submit' %}">Submit</a> <a href="{% url 'store:logout' %}">Logout</a>
+</form>
+
+</body>
+</html>
